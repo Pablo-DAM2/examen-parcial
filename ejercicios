@@ -1,0 +1,47 @@
+Ej 1- 
+Tenemos a nivel de programacion una herencia de mueble, armario, cama, coche,
+y hay algunos que tienen cosas comunes (con puertas) (interfaz) montar una jerarquia. Y para nota, en el readme comentar como probar eso o escribir un testing. No tienen metodos. Pueden usarse herencia
+
+
+
+Ej 2-
+Algoritmia-> Arboles: Desde cero montar un arbol con un algoritmo parecido al de los numeros. En el cual cada nodo, tiene un numero y un nombre. El valor que le damos al nodo,  si es impar no se tiene en cuenta el nombre, si es par le sumo la longitud de la cadena. 8 y hola = 12. Es con arrays.
+No hacer testing.
+
+
+
+3-
+Tengo 3 clases, Telefono, Teclado y Pantalla que tenemos que crear nosotros. Tienen relacion de Dispositivos. Cuando tecleo un numero en el telefono, ese numero, si doy a llamar, me aparece en pantalla (print). Si esta en llamada y presiona la tecla colgar -> Ele telefono deja de estar en llamada. Si estoy ya en llamada no se puede llamar.
+
+Tengo el boton de encendido y apagado. Tienen que trabajar de manera coordinada las 3 clases. Testing unitario.
+
+
+
+SERVIDOR
+4-
+No tengo capa de persistencia. Exponerme unos controladores. 2 Entidades ->
+PELICULA y DIRECTOR. CRUD con un matiz -> Una peliculas siempre tiene 1 DIRECTOR. 1 DIRECTOR tiene mínimo 1 PELICULA pero puede tener varias.
+
+Pelciula: titulo obligatorio -> longitud minima 1, maxima 100
+
+Director: nombre obligatorio -> longitud minima 1, maxima 50
+
+El director y Pelicuals tienen año de lanzamiento y año. no puede estar por debajo de 1800 pelicula y 1900 director.
+
+Test integracion.
+
+
+SERVIDOS con H2
+5-
+Festival de cine CIC. Va a haber un dia de festival, hay 3 salas y 3 sesiones.
+Sesion 1, 2 y 3. 9 sesiones en total 3x3.
+Se quieren vender las entradas, las entradas no son numeradas.
+Las salas tienen capacidad 1-> 100, 2-> 50 y 3-> 20.
+Precio de la entrada 5 euros, pero existen descuentos pero a aprtir de 5 personas incluido hay descuento de grupo, un 20 porciento a todos. 
+Tambien hay descuento joven -> a entradas individuales se les aplica un 30%. No se puede acumular con el otro descuento. 10x100/30
+
+El dueño del cine necesita. Por cada proyeccion (pelicula que echan), se tiene que sacar el numero de butacas,y precio y que pueda tener la informacion de los descuentos . Se admiten devoluciones.
+
+
+
+
