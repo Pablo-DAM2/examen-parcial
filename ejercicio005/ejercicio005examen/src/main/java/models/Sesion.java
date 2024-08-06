@@ -1,5 +1,8 @@
 package models;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +26,7 @@ public class Sesion {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_sala")
+	@Cascade(CascadeType.ALL)
 	private Sala sala;
 
 	public Integer getId() {

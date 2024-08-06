@@ -10,10 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
-import coches.models.Propietario;
-import coches.models.Sesion;
-import coches.repositories.CocheRepository;
-import coches.services.CocheService;
+
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import models.Sala;
@@ -41,71 +38,18 @@ public class SalaServiceTest {
 	@BeforeEach
 	public void setUp() {
 		
-		models.Sesion on = new models.Sesion();
+		models.Sesion on1 = new models.Sesion();
+		on1.setPrecioEntrada(5);
+		
 		
 		Sala s1 = new Sala();
 		s1.setCapacidad(100);
-		s1.set
+		on1.setSala(s1);
+		
+		//No me da tiempo a mas
 		
 	
-	}
-	@Test
-	@Transactional
-	void postCocheTest() {
-		Sesion c = new Sesion ();
-		c.setMatricula("2222-B");
-		
-		Propietario propietario = new Propietario();
-		propietario.setNombre("Pedro");	
-		propietario.getListaCoches().add(c);
-		
-		c.setPropietario(propietario);
-		
-		int idCochePersistido = cocheService.postCoche(c);
-		
-		assertThat(idCochePersistido).isNotNull(); 
-
-    
-        Sesion cochePersistido = em.find(Sesion.class, idCochePersistido);
-        assertThat(cochePersistido).isNotNull();
-        assertThat(cochePersistido.getMatricula()).isEqualTo("2222-B"); 
-		
-	}
-	@Test
-	@Transactional
-	void putCocheTest() throws Exception {
-		Sesion c = new Sesion();
-		c.setId(1);
-		c.setMatricula("AAAA-1");
-	
-	Sesion cochemodificado =	cocheService.putCoche(c);
-		assertThat(cochemodificado.getMatricula()).isEqualTo("AAAA-1");
-	}
-	
-	@Test
-	@Transactional
-	void delCocheTest() {
-		cocheService.delCoche(2);
-		Sesion cocheBorrado = em.find(Sesion.class, 2);
-		assertThat(cocheBorrado).isNull();
-	}
-	
-	@Test
-	@Transactional (readOnly = true)
-	void getOneTest() {
-	
-	Sesion cocheObtenido = cocheService.getOne(id1);
-
-	assertThat(cocheObtenido.getId()).isEqualTo(id1);
-		
 	}
 
-	@Test
-	@Transactional (readOnly = true)
-	void getAllTest() {
-		List<Sesion> listaCoches = cocheService.getAll();
-		
-		assertThat(listaCoches.size()).isGreaterThan(1);
-	}
 	
 }
